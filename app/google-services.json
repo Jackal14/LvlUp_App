@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "427029392938",
+    "project_id": "lvlup-33814",
+    "storage_bucket": "lvlup-33814.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427029392938:android:4fe0d1980dc4ddaf595d53",
+        "android_client_info": {
+          "package_name": "com.cs315.lvlup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "427029392938-af2ppv6bmp6ljdef3vqfpo619g789bg4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhvhE4HBeqobcS_xZDfrdk-_tRdKSX-tY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "427029392938-af2ppv6bmp6ljdef3vqfpo619g789bg4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
