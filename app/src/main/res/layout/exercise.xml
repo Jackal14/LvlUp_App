@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/exercise_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="Exercise Name"
+        android:layout_marginStart="16sp"
+        android:textSize="24sp"
+        />
+    <TextView
+        android:id="@+id/exercise_RPE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RPE: 9"
+        android:layout_alignBaseline="@id/exercise_sets"
+        android:layout_toEndOf="@id/exercise_reps"
+        android:layout_marginStart="16sp"
+        />
+    <TextView
+        android:id="@+id/exercise_load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/exercise_name"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16sp"
+        android:textSize="24sp"
+        android:text="Load: 160"
+        />
+    <TextView
+        android:id="@+id/exercise_sets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sets: 10"
+        android:textSize="16sp"
+        android:layout_marginTop="16sp"
+        android:layout_below="@id/exercise_name"
+        />
+    <TextView
+        android:id="@+id/exercise_reps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/exercise_name"
+        android:text="Reps: 8"
+        android:textSize="16sp"
+        android:layout_alignBaseline="@id/exercise_sets"
+        android:layout_marginStart="16sp"
+        android:layout_toEndOf="@id/exercise_sets"
+        />
+    <TextView
+        android:id="@+id/exercise_rest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/exercise_sets"
+        android:layout_toEndOf="@+id/exercise_RPE"
+        android:text="Rest: 30"
+        android:layout_marginStart="16sp"
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/notes_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/exercise_name"
+        android:layout_marginEnd="16sp"
+        android:layout_marginTop="8sp"
+        android:layout_marginBottom="8sp"
+        />
+
+</RelativeLayout>
