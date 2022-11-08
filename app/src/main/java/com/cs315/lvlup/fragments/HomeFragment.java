@@ -16,12 +16,15 @@ import com.cs315.lvlup.MainActivity;
 import com.cs315.lvlup.R;
 import com.cs315.lvlup.WorkoutCreator;
 import com.cs315.lvlup.WorkoutViewer;
+import com.cs315.lvlup.models.ExerciseModel;
 import com.cs315.lvlup.models.WorkoutModel;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.database.FirebaseListOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
     private FirebaseListAdapter<WorkoutModel> adapter;
@@ -73,19 +76,20 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 // Set their text
                 workoutName.setText(model.getWorkoutName());
                 bodyFocus.setText(model.getBodyFocus());
+                HashMap<String, ExerciseModel> test = model.getExercises();
 
-//                //Setting item click listener for list view item
-//                v.setOnClickListener(new View.OnClickListener() {
-//                                         @Override
-//                                         public void onClick(View v) {
-//                                             Intent intent = new Intent(HomeFragment.super.getContext(), WorkoutViewer.class);
-//                                             intent.putExtra(WORKOUT_NAMES, model.getWorkoutName());
-//                                             intent.putExtra(BODY_FOCUS, model.getBodyFocus());
-//                                             //intent.putExtra(EXERCISE, model.getExercises());
-//                                             startActivity(intent);
-//
-//                                         }
-//                                     });
+                //Setting item click listener for list view item
+                v.setOnClickListener(new View.OnClickListener() {
+                                         @Override
+                                         public void onClick(View v) {
+                                             Intent intent = new Intent(HomeFragment.super.getContext(), WorkoutViewer.class);
+                                             intent.putExtra(WORKOUT_NAMES, model.getWorkoutName());
+                                             intent.putExtra(BODY_FOCUS, model.getBodyFocus());
+                                             intent.putExtra(EXERCISE, model.getExercises());
+                                             startActivity(intent);
+
+                                         }
+                                     });
 //                // Format the date before showing it
 //                messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",
 //                        model.getMessageTime()));

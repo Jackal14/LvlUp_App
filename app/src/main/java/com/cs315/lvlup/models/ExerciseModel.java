@@ -2,7 +2,9 @@ package com.cs315.lvlup.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ExerciseModel {
+import java.io.Serializable;
+
+public class ExerciseModel implements Serializable {
     @SerializedName("exerciseName")
     String exerciseName;
     @SerializedName("exerciseSets")

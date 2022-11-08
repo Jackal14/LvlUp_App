@@ -2,10 +2,11 @@ package com.cs315.lvlup.models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 
-public class WorkoutModel {
+public class WorkoutModel implements Serializable {
     @SerializedName("workoutName")
     String workoutName;
     @SerializedName("bodyFocus")
