@@ -2,23 +2,18 @@ package com.cs315.lvlup;
 
 import static com.cs315.lvlup.fragments.HomeFragment.EXERCISE;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.cs315.lvlup.adapters.ExerciseListAdapter;
 import com.cs315.lvlup.models.ExerciseModel;
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
 
 public class WorkoutViewer extends AppCompatActivity {
 

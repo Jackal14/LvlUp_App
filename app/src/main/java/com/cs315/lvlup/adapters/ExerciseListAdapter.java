@@ -1,4 +1,4 @@
-package com.cs315.lvlup;
+package com.cs315.lvlup.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.cs315.lvlup.R;
 import com.cs315.lvlup.models.ExerciseModel;
 import com.google.gson.annotations.SerializedName;
 
