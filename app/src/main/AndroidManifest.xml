@@ -15,6 +15,13 @@
         android:theme="@style/Theme.LvlUp"
         tools:targetApi="31">
         <activity
+            android:name=".ExerciseCreator"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".WorkoutViewer"
             android:exported="false">
             <meta-data

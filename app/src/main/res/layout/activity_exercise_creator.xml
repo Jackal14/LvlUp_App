@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExerciseCreator">
+    <EditText
+        android:id="@+id/exercise_name_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:textSize="24sp"
+        android:paddingVertical="8sp"
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginBottom="8sp"
+        android:hint="Exercise Name"
+        />
+    <EditText
+        android:id="@+id/exercise_sets_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/exercise_name_edit_text"
+        android:textSize="24sp"
+        android:paddingVertical="8sp"
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginBottom="8sp"
+        android:hint="Exercise Sets"
+        />
+    <EditText
+        android:id="@+id/exercise_reps_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/exercise_sets_edit_text"
+        android:textSize="24sp"
+        android:paddingVertical="8sp"
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginBottom="8sp"
+        android:hint="Exercise Reps"
+        />
+    <EditText
+        android:id="@+id/exercise_load_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/exercise_reps_edit_text"
+        android:textSize="24sp"
+        android:paddingVertical="8sp"
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginBottom="8sp"
+        android:hint="Exercise Load"
+        />
+    <EditText
+        android:id="@+id/exercise_rpe_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/exercise_load_edit_text"
+        android:textSize="24sp"
+        android:paddingVertical="8sp"
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginBottom="8sp"
+        android:hint="Exercise RPE"
+        />
+    <EditText
+        android:id="@+id/exercise_rest_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/exercise_rpe_edit_text"
+        android:textSize="24sp"
+        android:paddingVertical="8sp"
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginBottom="8sp"
+        android:hint="Exercise Rest"
+        />
+    <EditText
+        android:id="@+id/exercise_notes_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/exercise_rest_edit_text"
+        android:layout_above="@+id/save_exercise_button"
+        android:textSize="24sp"
+        android:paddingVertical="8sp"
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginBottom="8sp"
+        android:hint="Exercise Rest"
+        />
+    <Button
+        android:id="@+id/save_exercise_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginBottom="8sp"
+        android:text="SAVE EXERCISE"
+        android:textSize="24sp"
+        android:paddingVertical="8sp"
+        />
+
+</RelativeLayout>
