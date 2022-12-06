@@ -57,6 +57,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 //                        FirebaseAuth.getInstance()
 //                                .getCurrentUser().getEmail())
 //                );
+        Intent intent = new Intent(HomeFragment.super.getContext(), WorkoutCreator.class);
+        startActivity(intent);
     }
 
     private void displayWorkouts(View v)

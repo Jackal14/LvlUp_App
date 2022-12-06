@@ -1,9 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WorkoutCreator">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/workout_name_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginBottom="8sp"
+        android:hint="Workout Name"
+        android:textSize="24sp"
+        android:paddingVertical="8sp"
+
+        />
+    <EditText
+        android:id="@+id/workout_body_focus_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/workout_name_edit_text"
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginBottom="8sp"
+        android:hint="Body Focus"
+        android:textSize="24sp"
+        android:paddingVertical="8sp"
+
+        android:autofillHints="" />
+
+    <ListView
+        android:id="@+id/exercise_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/workout_body_focus_edit_text"
+        android:layout_above="@+id/add_exercise_to_workout"
+        />
+    <Button
+        android:id="@+id/add_exercise_to_workout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below ="@+id/save_workout_button"
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginBottom="8sp"
+        android:text="ADD EXERCISE"
+        android:textSize="24sp"
+        android:paddingVertical="8sp"/>
+    <Button
+        android:id="@+id/save_workout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginBottom="8sp"
+        android:text="SAVE WORKOUT"
+        android:textSize="24sp"
+        android:paddingVertical="8sp"
+        />
+
+
+
+</RelativeLayout>
