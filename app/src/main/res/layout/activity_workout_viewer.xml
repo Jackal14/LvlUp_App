@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="25dp"
     tools:context=".WorkoutViewer">
 
     <ListView
@@ -11,16 +12,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/start_workout"/>
+
     <Button
         android:id="@+id/start_workout"
-        android:layout_width="match_parent"
+        android:layout_width="336dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginHorizontal="16sp"
         android:layout_marginBottom="8sp"
-        android:text="START WORKOUT"
-        android:textSize="24sp"
         android:paddingVertical="8sp"
-        />
+        android:text="START WORKOUT"
+        android:textSize="24sp" />
 
 </RelativeLayout>

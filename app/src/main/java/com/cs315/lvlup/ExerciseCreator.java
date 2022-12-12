@@ -1,5 +1,8 @@
 package com.cs315.lvlup;
 
+import static com.cs315.lvlup.WorkoutCreator.BODY_FOCUS;
+import static com.cs315.lvlup.WorkoutCreator.WORKOUT_NAME;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -22,7 +25,8 @@ public class ExerciseCreator extends AppCompatActivity {
         String EXERCISE_MAP = "EXERCISE";
         Intent intent = getIntent();
         HashMap<String, ExerciseModel> map = new HashMap<>();
-
+        String workoutName = intent.getStringExtra(WORKOUT_NAME);
+        String bodyFocus = intent.getStringExtra(BODY_FOCUS);
         if(intent.getSerializableExtra(EXERCISE_MAP) != null)
         {
             map = (HashMap<String, ExerciseModel>) intent.getSerializableExtra(EXERCISE_MAP);
@@ -55,6 +59,8 @@ public class ExerciseCreator extends AppCompatActivity {
                 Intent intent = new Intent(ExerciseCreator.this, WorkoutCreator.class);
 //                intent.putExtra(, model.getWorkoutName());
 //                intent.putExtra(, model.getBodyFocus());
+                intent.putExtra(WORKOUT_NAME, workoutName);
+                intent.putExtra(BODY_FOCUS, bodyFocus);
                 intent.putExtra(EXERCISE_MAP, finalMap);
                 startActivity(intent);
             }

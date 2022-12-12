@@ -1,32 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="@drawable/thickcrop"
+    android:backgroundTint="#86AA30"
     android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/workout_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:paddingLeft="8sp"
+        android:layout_centerInParent="true"
+        android:fontFamily="sans-serif-black"
+        android:paddingLeft="16dp"
         android:text="Workout Name"
-        android:textSize="36sp"
+        android:textColor="#2B3310"
+        android:textSize="32sp"
         android:textStyle="normal|bold" />
 
     <TextView
         android:id="@+id/body_focus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/workout_name"
+        android:layout_alignEnd="@id/workout_name"
+        android:layout_alignBottom="@+id/workout_name"
         android:layout_alignParentEnd="true"
+        android:fontFamily="sans-serif-black"
+        android:paddingRight="40sp"
         android:layout_centerInParent="true"
-        android:paddingRight="12sp"
         android:text="Body Focus"
+        android:textColor="#4D5D1A"
         android:textSize="16sp"
-         />
+        android:textStyle="bold" />
 
-<!--    <TextView-->
+    <!--    <TextView-->
 <!--        android:id="@+id/message_text"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->

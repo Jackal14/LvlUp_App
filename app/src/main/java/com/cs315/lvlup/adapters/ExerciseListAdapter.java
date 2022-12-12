@@ -55,11 +55,11 @@ public class ExerciseListAdapter extends ArrayAdapter<ExerciseModel> {
         TextView exRest = (TextView) convertView.findViewById(R.id.exercise_rest);
 
         exName.setText(exerciseName);
-        exSets.setText(exerciseSets.toString());
-        exReps.setText(exerciseReps.toString());
-        exLoad.setText(exerciseLoad.toString());
+        exSets.append(exerciseSets.toString());
+        exReps.append(exerciseReps.toString());
+        exLoad.append(exerciseLoad.toString());
         //exRPE.setText(exerciseRPE.toString());
-        exRest.setText(exerciseRest.toString());
+        exRest.append(exerciseRest.toString());
 
         return convertView;
     }

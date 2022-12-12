@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="25dp"
     tools:context=".ExerciseCreator">
+
     <EditText
         android:id="@+id/exercise_name_edit_text"
         android:layout_width="match_parent"
@@ -26,6 +28,7 @@
         android:layout_marginHorizontal="16sp"
         android:layout_marginBottom="8sp"
         android:hint="Exercise Sets"
+        android:inputType="number"
         />
     <EditText
         android:id="@+id/exercise_reps_edit_text"
@@ -37,6 +40,7 @@
         android:layout_marginHorizontal="16sp"
         android:layout_marginBottom="8sp"
         android:hint="Exercise Reps"
+        android:inputType="number"
         />
     <EditText
         android:id="@+id/exercise_load_edit_text"
@@ -48,6 +52,7 @@
         android:layout_marginHorizontal="16sp"
         android:layout_marginBottom="8sp"
         android:hint="Exercise Load"
+        android:inputType="number"
         />
     <EditText
         android:id="@+id/exercise_rpe_edit_text"
@@ -59,6 +64,7 @@
         android:layout_marginHorizontal="16sp"
         android:layout_marginBottom="8sp"
         android:hint="Exercise RPE"
+        android:inputType="number"
         />
     <EditText
         android:id="@+id/exercise_rest_edit_text"
@@ -69,7 +75,8 @@
         android:paddingVertical="8sp"
         android:layout_marginHorizontal="16sp"
         android:layout_marginBottom="8sp"
-        android:hint="Exercise Rest"
+        android:hint="Exercise Rest (in seconds)"
+        android:inputType="number"
         />
     <EditText
         android:id="@+id/exercise_notes_edit_text"
@@ -81,7 +88,7 @@
         android:paddingVertical="8sp"
         android:layout_marginHorizontal="16sp"
         android:layout_marginBottom="8sp"
-        android:hint="Exercise Rest"
+        android:hint="Exercise Notes"
         />
     <Button
         android:id="@+id/save_exercise_button"
