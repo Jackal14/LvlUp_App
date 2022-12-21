@@ -1,42 +1,24 @@
 package com.cs315.lvlup.fragments;
 
-import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.cs315.lvlup.MainActivity;
 import com.cs315.lvlup.R;
-import com.cs315.lvlup.WorkoutCreator;
-import com.cs315.lvlup.WorkoutViewer;
-import com.cs315.lvlup.adapters.ExerciseListAdapter;
+import com.cs315.lvlup.creators_viewers.WorkoutCreator;
+import com.cs315.lvlup.creators_viewers.WorkoutViewer;
 import com.cs315.lvlup.adapters.WorkoutListAdapter;
-import com.cs315.lvlup.adapters.WorkoutObject;
-import com.cs315.lvlup.models.ExerciseModel;
 import com.cs315.lvlup.models.WorkoutModel;
-import com.firebase.ui.database.FirebaseListAdapter;
-import com.firebase.ui.database.FirebaseListOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -48,8 +30,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
 
 //Fragment class that will display user workouts/allow users to add more
 

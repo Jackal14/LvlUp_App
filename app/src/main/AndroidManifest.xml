@@ -10,30 +10,33 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/playstore"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/playstore"
+        android:roundIcon="@drawable/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LvlUp"
         tools:targetApi="31">
         <activity
-            android:name=".ExerciseCreator"
+            android:name=".creators_viewers.ExerciseCreator"
             android:exported="false"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:parentActivityName=".creators_viewers.WorkoutCreator">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".WorkoutViewer"
+            android:name=".creators_viewers.WorkoutViewer"
             android:exported="false"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:parentActivityName=".creators_viewers.WorkoutViewer">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".WorkoutCreator"
+            android:name=".creators_viewers.WorkoutCreator"
             android:exported="false"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:parentActivityName=".creators_viewers.WorkoutViewer">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -55,7 +58,8 @@
         <activity
             android:name=".login.LoginActivity"
             android:exported="false"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:parentActivityName=".login.StartScreen">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -63,7 +67,8 @@
         <activity
             android:name=".login.RegistrationActivity"
             android:exported="false"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:parentActivityName=".login.StartScreen">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
