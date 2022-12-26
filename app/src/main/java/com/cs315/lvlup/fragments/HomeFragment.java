@@ -51,6 +51,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
+
         //Get our firebase and firestore instances
         mAuth = FirebaseAuth.getInstance();
         userID = mAuth.getCurrentUser().getUid();
@@ -106,13 +107,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         // Creating an ArrayList of values
         ArrayList<WorkoutModel> listOfValues = new ArrayList<WorkoutModel>(values);
         WorkoutListAdapter adapter = new WorkoutListAdapter(getActivity(), R.layout.workout, listOfValues);
-//        v.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//
-//            }
-//        });
+
         listOfWorkouts.setAdapter(adapter);
         listOfWorkouts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -25,23 +26,15 @@ import com.google.firebase.storage.StorageReference;
 
 public class MainActivity extends AppCompatActivity {
 
-    private StorageReference mStorageRef;
-    private DatabaseReference mDatabaseRef;
-
-    //Check login
-    private FirebaseUser currentUser;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mStorageRef = FirebaseStorage.getInstance().getReference();
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference();
-
         //Get the auth instance for firebase
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
-        currentUser = mAuth.getCurrentUser();
+        //Check login
+        FirebaseUser currentUser = mAuth.getCurrentUser();
 
         if (currentUser == null)
         {
@@ -64,24 +57,12 @@ public class MainActivity extends AppCompatActivity {
                     homeFragment).commit();
 
         }
-
-        //Eventually we want to implement logout functionality
-        /*Sign out the user
-        Button button = (Button) findViewById(R.id.button2);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(MainActivity.this, StartScreen.class);
-                startActivity(intent);
-            }
-        });*/
         //Adapter listening will happen within their respective fragments
-
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @SuppressLint("NonConstantResourceId")
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     Fragment selectedFragment = null;
@@ -104,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     //Once selected fragment has been determined, replace the current fragment with selected fragment
+                    assert selectedFragment != null;
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                             selectedFragment).commit();
                     return true;
