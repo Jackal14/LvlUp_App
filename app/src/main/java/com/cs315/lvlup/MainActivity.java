@@ -57,9 +57,11 @@ public class MainActivity extends AppCompatActivity {
             //Get a reference to the bottom navigation view and create a listener for clicks
             BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
             bottomNav.setOnNavigationItemSelectedListener(navListener);
+
+            HomeFragment homeFragment = new HomeFragment();
             //When we first open the app, default to the home page
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    fragment).commit();
+                    homeFragment).commit();
 
         }
 
