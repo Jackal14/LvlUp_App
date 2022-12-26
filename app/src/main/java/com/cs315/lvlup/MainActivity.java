@@ -43,11 +43,14 @@ public class MainActivity extends AppCompatActivity {
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
-        if (currentUser == null) {
+        if (currentUser == null)
+        {
             //If there isn't a current user, load up the StartScreen activity
             Intent intent = new Intent(MainActivity.this, StartScreen.class);
             startActivity(intent);
-        } else {
+        }
+        else
+        {
             //Else let the activity load the fragments
             //We can send necessary data to our fragments from here
             ProfileFragment fragment = ProfileFragment.newInstance("Example text");
