@@ -31,6 +31,11 @@
         android:layout_height="wrap_content"
         android:hint="Enter your Password"
         android:inputType="textPassword" />
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your Email" />
 
     <Button
         android:id="@+id/btnregister"
@@ -44,11 +49,7 @@
         android:layout_height="wrap_content"
         android:text="login" />
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter your Email" />
+
 
     <!-- Edit text for password -->
 

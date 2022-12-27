@@ -1,5 +1,8 @@
 package com.cs315.lvlup.creators_viewers;
 
+import static com.cs315.lvlup.creators_viewers.RoutineViewer.ROUTINE_ID_2;
+import static com.cs315.lvlup.fragments.HomeFragment.ROUTINE_ID;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -33,8 +36,8 @@ public class WorkoutCreator extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore firestore;
     String userID;
-    CollectionReference workoutsCollection;
-    DocumentReference workoutsDocument;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +58,9 @@ public class WorkoutCreator extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
         userID = mAuth.getCurrentUser().getUid();
-        workoutsCollection = firestore.collection("users").document(userID).collection("workouts");
+        String routineId = intent.getStringExtra(ROUTINE_ID_2);
+
+
 
         //Get current exercises and display them in a list using an adapter
         HashMap<String, ExerciseModel> map = new HashMap<>();
@@ -103,6 +108,7 @@ public class WorkoutCreator extends AppCompatActivity {
                     intent.putExtra(WORKOUT_NAME, workoutName.getText().toString());
                     intent.putExtra(BODY_FOCUS, bodyFocus.getText().toString());
                     intent.putExtra(EXERCISE_MAP, finalMap);
+                    intent.putExtra(ROUTINE_ID_2, routineId);
                 }
                 startActivity(intent);
             }
@@ -116,7 +122,29 @@ public class WorkoutCreator extends AppCompatActivity {
             {
                 //Create a new workout model based on the data provided
                 WorkoutModel workoutModel = new WorkoutModel(workoutName.getText().toString(), bodyFocus.getText().toString(), finalMap);
-                workoutsCollection.add(workoutModel);
+
+                try{
+                    CollectionReference workoutsCollection = firestore.collection("users")
+                            .document(userID).collection("routines").document(routineId).collection("workouts");
+                    DocumentReference workoutsDocument = firestore.collection("users")
+                            .document(userID).collection("routines").document(routineId);
+
+                    workoutsCollection.add(workoutModel);
+//                    if(workoutsCollection == null)
+//                    {
+//                        workoutsDocument.set(workoutModel);
+//                    }
+//                    else
+//                    {
+//
+//                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
+
+
                 Intent intent = new Intent(WorkoutCreator.this, MainActivity.class);
                 startActivity(intent);
             }
