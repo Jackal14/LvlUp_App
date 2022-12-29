@@ -122,9 +122,9 @@ public class RegistrationActivity extends AppCompatActivity {
                             userID = mAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = firestore.collection("users").document(userID);
                             Map<String, Object> user = new HashMap<>();
+                            user.put("username", username);
                             user.put("email", email);
                             user.put("password", password);
-                            user.put("username", username);
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
@@ -143,7 +143,7 @@ public class RegistrationActivity extends AppCompatActivity {
                             Toast.makeText(
                                             getApplicationContext(),
                                             "Registration failed!!"
-                                                    + " Please try again later",
+                                                    + " Please try again later" + task.getException(),
                                             Toast.LENGTH_LONG)
                                     .show();
 

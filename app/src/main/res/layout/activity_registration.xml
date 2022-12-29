@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,42 +13,49 @@
     <!-- Edit text for email -->
 
     <TextView
+        android:id="@+id/register_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="85dp"
-        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp"
         android:text="Register" />
 
     <EditText
         android:id="@+id/username"
+        android:layout_below="@+id/register_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter your Username" />
 
     <EditText
-        android:id="@+id/passwd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter your Password"
-        android:inputType="textPassword" />
-    <EditText
         android:id="@+id/email"
+        android:layout_below="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter your Email" />
 
+    <EditText
+        android:id="@+id/passwd"
+        android:layout_below="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your Password"
+        android:inputType="textPassword" />
+
     <Button
         android:id="@+id/btnregister"
+        android:layout_below="@+id/passwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Register" />
 
     <Button
         android:id="@+id/button_login"
+        android:layout_below="@+id/btnregister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="login" />
-
 
 
     <!-- Edit text for password -->
@@ -58,9 +65,10 @@
     <!-- ProgressBar for loading time -->
     <ProgressBar
         android:id="@+id/progressbar"
+        android:layout_below="@+id/button_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone" />
 
 
-</LinearLayout>
+</RelativeLayout>
