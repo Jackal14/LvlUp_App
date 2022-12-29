@@ -7,8 +7,10 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.cs315.lvlup.MainActivity;
 import com.cs315.lvlup.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class StartScreen extends AppCompatActivity {
 
@@ -16,7 +18,17 @@ public class StartScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_screen);
+        //Get the auth instance for firebase
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        //Check login
+        FirebaseUser currentUser = mAuth.getCurrentUser();
 
+        if (currentUser != null)
+        {
+            //If there isn't a current user, load up the StartScreen activity
+            Intent intent = new Intent(StartScreen.this, MainActivity.class);
+            startActivity(intent);
+        }
 
         //Button for login
         Button loginButton = (Button) findViewById(R.id.loginButton);

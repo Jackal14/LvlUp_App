@@ -1,6 +1,6 @@
 package com.cs315.lvlup.creators_viewers;
 
-import static com.cs315.lvlup.fragments.HomeFragment.EXERCISE;
+import static com.cs315.lvlup.creators_viewers.RoutineViewer.EXERCISE;
 
 import androidx.appcompat.app.AppCompatActivity;
 

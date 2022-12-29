@@ -15,10 +15,26 @@
         android:theme="@style/Theme.LvlUp"
         tools:targetApi="31">
         <activity
+            android:name=".creators_viewers.RoutineCreator"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".creators_viewers.RoutineViewer"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".creators_viewers.ExerciseCreator"
             android:exported="false"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".creators_viewers.WorkoutCreator">
+            android:parentActivityName=".creators_viewers.WorkoutCreator"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -26,8 +42,8 @@
         <activity
             android:name=".creators_viewers.WorkoutViewer"
             android:exported="false"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".creators_viewers.WorkoutViewer">
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -35,8 +51,8 @@
         <activity
             android:name=".creators_viewers.WorkoutCreator"
             android:exported="false"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".creators_viewers.WorkoutViewer">
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -58,8 +74,8 @@
         <activity
             android:name=".login.LoginActivity"
             android:exported="false"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".login.StartScreen">
+            android:parentActivityName=".login.StartScreen"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -67,8 +83,8 @@
         <activity
             android:name=".login.RegistrationActivity"
             android:exported="false"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".login.StartScreen">
+            android:parentActivityName=".login.StartScreen"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

@@ -6,18 +6,18 @@
     android:background="#FFFFFF">
 
     <ListView
-        android:id="@+id/list_of_routines"
+        android:id="@+id/list_of_workouts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:stackFromBottom="false"
         android:layout_alignParentTop="true"
-        android:layout_above="@id/add_routine_button"
+        android:layout_above="@id/add_workout_button"
         android:dividerHeight="4dp"
         android:divider="@color/white"
         />
 
     <Button
-        android:id="@+id/add_routine_button"
+        android:id="@+id/add_workout_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16sp"

@@ -1,7 +1,9 @@
 package com.cs315.lvlup.creators_viewers;
 
+import static com.cs315.lvlup.creators_viewers.RoutineViewer.ROUTINE_ID_2;
 import static com.cs315.lvlup.creators_viewers.WorkoutCreator.BODY_FOCUS;
 import static com.cs315.lvlup.creators_viewers.WorkoutCreator.WORKOUT_NAME;
+import static com.cs315.lvlup.fragments.HomeFragment.ROUTINE_ID;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,6 +26,7 @@ public class ExerciseCreator extends AppCompatActivity {
         setContentView(R.layout.activity_exercise_creator);
         String EXERCISE_MAP = "EXERCISE";
         Intent intent = getIntent();
+        String routineId = intent.getStringExtra(ROUTINE_ID_2);
         HashMap<String, ExerciseModel> map = new HashMap<>();
         String workoutName = intent.getStringExtra(WORKOUT_NAME);
         String bodyFocus = intent.getStringExtra(BODY_FOCUS);
@@ -62,6 +65,7 @@ public class ExerciseCreator extends AppCompatActivity {
                 intent.putExtra(WORKOUT_NAME, workoutName);
                 intent.putExtra(BODY_FOCUS, bodyFocus);
                 intent.putExtra(EXERCISE_MAP, finalMap);
+                intent.putExtra(ROUTINE_ID_2, routineId);
                 startActivity(intent);
             }
         });

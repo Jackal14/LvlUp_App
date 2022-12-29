@@ -71,7 +71,8 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ProfileFragment.super.getContext(), StartScreen.class);
-                //firebaseAuth.signOut();
+                registration.remove();
+                firebaseAuth.signOut();
                 startActivity(intent);
             }
         });

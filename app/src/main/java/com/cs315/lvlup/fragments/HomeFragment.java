@@ -13,10 +13,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.cs315.lvlup.R;
-import com.cs315.lvlup.creators_viewers.WorkoutCreator;
-import com.cs315.lvlup.creators_viewers.WorkoutViewer;
-import com.cs315.lvlup.adapters.WorkoutListAdapter;
-import com.cs315.lvlup.models.WorkoutModel;
+import com.cs315.lvlup.adapters.RoutineListAdapter;
+import com.cs315.lvlup.creators_viewers.RoutineCreator;
+import com.cs315.lvlup.creators_viewers.RoutineViewer;
+import com.cs315.lvlup.models.RoutineModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.EventListener;
@@ -41,28 +41,27 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     CollectionReference workoutsRef;
     ListenerRegistration registration;
 
-    public static final String WORKOUT_NAMES = "name";
-    public static final String BODY_FOCUS = "bodyFocus";
-    public static final String EXERCISE = "exercise";
-
+    public static final String ROUTINE_NAME = "name";
+    public static final String ROUTINE_ID = "id";
+    public static final String WORKOUTS = "workouts";
     //When creating view, set up the entire layout
     @Override
     @Nullable
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
+
         //Get our firebase and firestore instances
         mAuth = FirebaseAuth.getInstance();
         userID = mAuth.getCurrentUser().getUid();
         firestore = FirebaseFirestore.getInstance();
 
-        //Get reference to our workouts collection
-        workoutsRef = firestore.collection("users").document(userID).collection("workouts");
-        getWorkouts(v);
+        //Get workouts
+        getRoutines(v);
 
         //Add on click listener for a button to add workouts to workout list
-        Button addWorkout = (Button) v.findViewById(R.id.add_workout_button);
-        addWorkout.setOnClickListener(this);
+        Button addRoutine = (Button) v.findViewById(R.id.add_routine_button);
+        addRoutine.setOnClickListener(this);
         return v;
     }
 
@@ -70,14 +69,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v)
     {
-        Intent intent = new Intent(HomeFragment.super.getContext(), WorkoutCreator.class);
+        Intent intent = new Intent(HomeFragment.super.getContext(), RoutineCreator.class);
         startActivity(intent);
     }
 
     //Method to display our workouts in the list using a custom adapter class
-    private void getWorkouts(View v)
+    private void getRoutines(View v)
     {
-        Query query = firestore.collection("users").document(userID).collection("workouts");
+        Query query = firestore.collection("users").document(userID).collection("routines");
         registration = query.addSnapshotListener(
                 new EventListener<QuerySnapshot>() {
                     @Override
@@ -87,40 +86,35 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                             return;
                         }
 
-                        HashMap<String, WorkoutModel> hashMap = new HashMap<>();
+                        HashMap<String, RoutineModel> hashMap = new HashMap<>();
                         //Iterate through the documents we retrieved from the collection
                         for(QueryDocumentSnapshot documentSnapshot : value)
                         {
-                            WorkoutModel model = documentSnapshot.toObject(WorkoutModel.class);
-                            hashMap.put(model.getWorkoutName(), model);
+                            RoutineModel model = documentSnapshot.toObject(RoutineModel.class);
+                            model.setRoutineId(documentSnapshot.getId());
+                            hashMap.put(model.getRoutineName(), model);
                         }
-                        displayWorkouts(hashMap, v);
+                        displayRoutines(hashMap, v);
                     }
                 });
     }
-    private void displayWorkouts(HashMap<String, WorkoutModel> hashMap, View v)
+    private void displayRoutines(HashMap<String, RoutineModel> hashMap, View v)
     {
-        ListView listOfWorkouts = (ListView)v.findViewById(R.id.list_of_workouts);
+        ListView listOfRoutines = (ListView)v.findViewById(R.id.list_of_routines);
         // Getting Collection of values from HashMap
-        Collection<WorkoutModel> values = hashMap.values();
+        Collection<RoutineModel> values = hashMap.values();
         // Creating an ArrayList of values
-        ArrayList<WorkoutModel> listOfValues = new ArrayList<WorkoutModel>(values);
-        WorkoutListAdapter adapter = new WorkoutListAdapter(getActivity(), R.layout.workout, listOfValues);
-//        v.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//
-//            }
-//        });
-        listOfWorkouts.setAdapter(adapter);
-        listOfWorkouts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ArrayList<RoutineModel> listOfValues = new ArrayList<RoutineModel>(values);
+        RoutineListAdapter adapter = new RoutineListAdapter(getActivity(), R.layout.routine, listOfValues);
+
+        listOfRoutines.setAdapter(adapter);
+        listOfRoutines.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(HomeFragment.super.getContext(), WorkoutViewer.class);
-                intent.putExtra(WORKOUT_NAMES, adapter.getItem(position).getWorkoutName());
-                intent.putExtra(BODY_FOCUS, adapter.getItem(position).getBodyFocus());
-                intent.putExtra(EXERCISE,  adapter.getItem(position).getExercises());
+                Intent intent = new Intent(HomeFragment.super.getContext(), RoutineViewer.class);
+                intent.putExtra(ROUTINE_ID, adapter.getItem(position).getRoutineId());
+                intent.putExtra(ROUTINE_NAME, adapter.getItem(position).getRoutineName());
+                intent.putExtra(WORKOUTS,  adapter.getItem(position).getWorkouts());
                 startActivity(intent);
             }
         });

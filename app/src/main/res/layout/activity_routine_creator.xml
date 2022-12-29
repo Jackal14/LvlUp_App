@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:padding="30dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".creators_viewers.WorkoutCreator">
+
+    <EditText
+        android:id="@+id/routine_name_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginBottom="8sp"
+        android:hint="Routine Name"
+        android:textSize="24sp"
+        android:paddingVertical="8sp"
+        android:inputType="text"
+
+        />
+    <Button
+        android:id="@+id/save_routine_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginBottom="8sp"
+        android:text="SAVE ROUTINE"
+        android:textSize="24sp"
+        android:paddingVertical="8sp"
+        />
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</RelativeLayout>
